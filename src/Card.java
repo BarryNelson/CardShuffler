@@ -1,6 +1,8 @@
 /**
+ * This class represents a playing card.
  * 
  * @author Barry Nelson
+ * @copyright 2013 Barry Nelson
  * 
  */
 public class Card {

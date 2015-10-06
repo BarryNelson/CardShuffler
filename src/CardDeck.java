@@ -5,6 +5,7 @@ import java.util.Random;
  * (king)
  * 
  * @author Barry Nelson
+ * @copyright 2013 Barry Nelson
  *
  */
 public class CardDeck {
@@ -193,22 +194,23 @@ public class CardDeck {
 	/**
 	 * shuffle the deck
 	 * 
-	 * @param reps
+	 * @param reps - number of repetitions to shuffle
 	 */
 	public void shuffle(int reps) {
 
-		// shuffle_striping(random.nextInt(deckSize/5)+(deckSize/6));
-		// shuffle_striping(random.nextInt(deckSize/3)+(deckSize/6));
+		// stripeShuffle(random.nextInt(deckSize/5)+(deckSize/6));
+		// stripeShuffle(random.nextInt(deckSize/3)+(deckSize/6));
 
 		riffleShuffle(reps);
 
 	}
 
 	/**
-	 * stripeShuffle is often used in conjunction to a riffleShuffle when shuffling cards
+	 * <pre>stripeShuffle is often used in conjunction to a riffleShuffle when shuffling cards.
+	 * 
 	 * method: a group of cards is separated from the top of the deck and placed at the
-	 * end of the next "stripe" of cards removed from the new top of the deck this
-	 * procedure repeats until the original deck is exhausted
+	 * 	end of the next "stripe" of cards removed from the new top of the deck this
+	 * 	procedure repeats until the original deck is exhausted
 	 * 
 	 * @param stripe
 	 */
@@ -234,9 +236,11 @@ public class CardDeck {
 	}
 
 	/**
-	 * riffleShuffle is the most common form of shuffling cards method: deck is
-	 * stripeShuffled then deck is cut into two decks randomly those two decks are merged
-	 * via shuffleMerge
+	 * <pre>riffleShuffle is the most common form of shuffling cards 
+	 * 
+	 * method: 
+	 * deck is stripeShuffled then deck is cut into two decks randomly 
+	 * those two decks are then merged via shuffleMerge
 	 * 
 	 * @param i
 	 */
@@ -283,8 +287,6 @@ public class CardDeck {
 			tempDeck = null;
 			interleaveFactor = 1 / interleaveFactor;
 		}
-
-		int preMergeCount = deck1.count() + deck2.count();
 
 		float interleave = 0.0f;
 		float priorInterleave = 0.0f;
